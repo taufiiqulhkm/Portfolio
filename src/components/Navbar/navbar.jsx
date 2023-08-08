@@ -1,42 +1,26 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
+import { AppBar, Box, Toolbar, IconButton, Typography, Menu, MenuItem, Button, Container, Link } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-// import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-// import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
 
 
-const pages = ['Home', 'About Me','Project' ,'Blog', 'COntact'];
-// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+const pages = ['Home', 'About Me', 'Project', 'Blog', 'COntact'];
+
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-//   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-//   const handleOpenUserMenu = (event) => {
-//     setAnchorElUser(event.currentTarget);
-//   };
+
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-//   const handleCloseUserMenu = () => {
-//     setAnchorElUser(null);
-//   };
-
   return (
-    <AppBar position="static" sx = {{backgroundColor: '#003366'}}>
+    <AppBar position="static" sx={{ backgroundColor: '#003366' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
           <Typography
@@ -111,15 +95,18 @@ function Navbar() {
           >
             Taufiiqulhakim Jubair
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },  justifyContent: 'flex-end',  alignItems: 'center',   }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', alignItems: 'center', }}>
             {pages.map((page) => (
               <Button
                 key={page}
+                component={Link} // Use Link component
+                to={`/${page.toLowerCase().replace(/\s+/g, '-')}`} // Generate link based on page name
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none' }} // Apply styles to the link
               >
                 {page}
               </Button>
+
             ))}
           </Box>
         </Toolbar>
