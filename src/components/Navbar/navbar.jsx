@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { AppBar, Box, Toolbar, IconButton, Typography, Menu, MenuItem, Button, Container, Link } from '@mui/material';
+import { AppBar, Box, Toolbar, IconButton, Typography, Menu, MenuItem, Button, Container} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom';
 
 
 
-const pages = ['Home', 'About Me', 'Project', 'Blog', 'COntact'];
+
+const pages = ['Home', 'About Me', 'Project', 'Blog', 'Contact'];
 
 
 function Navbar() {
@@ -95,19 +97,49 @@ function Navbar() {
           >
             Taufiiqulhakim Jubair
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', alignItems: 'center', }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                component={Link} // Use Link component
-                to={`/${page.toLowerCase().replace(/\s+/g, '-')}`} // Generate link based on page name
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none' }} // Apply styles to the link
-              >
-                {page}
-              </Button>
-
-            ))}
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', alignItems: 'center' }}>
+            <Link to ="/">
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none' }}
+            >
+              Home
+            </Button>
+            </Link>
+            <Link to = "/about">
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none' }}
+            >
+              About Me
+            </Button>
+            
+            </Link>
+            <Button
+              component={Link}
+              to="/project" // Ganti ini dengan rute untuk halaman Project
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none' }}
+            >
+              Project
+            </Button>
+            <Link>
+            <Button
+              
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none' }}
+            >
+              Blog
+            </Button>
+            </Link>
+            <Button
+              component={Link}
+              to="/contact" // Ganti ini dengan rute untuk halaman Contact
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none' }}
+            >
+              Contact
+            </Button>
           </Box>
         </Toolbar>
       </Container>

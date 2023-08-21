@@ -6,20 +6,23 @@ import {
     Instagram as InstagramIcon,
     GitHub as GitHubIcon,
 } from '@mui/icons-material';
+import './movingText.css';
 
-export default function ColumnsGrid() {
+export default function Content() {
+
+    
     return (
         <Box sx={{ flexGrow: 1, mt: '250px', px: '40px', backgroundColor: '#E0E5EC'}}>
             <Grid container spacing={3} alignItems="center">
                 <Grid item xs={12} md={6} >
                     <Box sx={{ textAlign: 'center'}}>
-                        <Typography variant='h5' sx={{ mb: '20px' }}>
-                            Halo, Saya Taufiiqulhakim Jubair
+                        <Typography variant='h4' sx={{ mb: '20px' }} className="moving-text">
+                            Taufiiqulhakim Jubair
                         </Typography>
                         <Typography variant='body1' sx={{ mb: '2px' }}>
-                            Saya seorang Fullstack Engineer yang ingin mengembangkan Website Portfolio
+                            Saya seorang Web Develpoment yang ingin mengembangkan Website Portfolio
                             <br />
-                            saya membuat ini dengan React.js
+                            dengan menggunakan React.js dan Material ui
                         </Typography>
                         <Link href="https://www.linkedin.com/in/taufiiqulhakim-jubair" target="_blank" rel="noopener">
                             <LinkedInIcon sx={{ fontSize: '25px',color: 'black' }} />

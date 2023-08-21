@@ -1,0 +1,16 @@
+/* styles.css
+
+@keyframes moveText {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.moving-text {
+  white-space: nowrap;
+  overflow: hidden;
+  animation: moveText 10s linear infinite;
+} */
